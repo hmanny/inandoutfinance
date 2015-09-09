@@ -1,0 +1,75 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    background: $white;
+    overflow-x: hidden;
+    &.menu_up {
+        overflow: hidden;
+    }
+    p {
+        font-family: $text;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    button {
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 16px;
+        @include transition(background 0.3s);
+        font-family: $bold;
+        padding: 10px 15px;
+        @include breakpoint($lg) {
+            padding: 24px 77px;
+        }
+        background: $orange;
+        margin-top: 12px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .middle {
+        vertical-align: middle;
+    }
+    strong {
+        font-family: $semi;
+    }
+    b {
+        font-family: $bold;
+    }
+    .light {
+        font-family: $light;
+    }
+    .italic,
+    em {
+        font-family: $italic;
+    }
+    h1 {
+        font-family: $condensed;
+        font-size: 34px;
+        strong {
+            font-family: $condensedBold;
+        }
+        &:after {
+            content: "";
+            margin: 20px 0;
+            display: block;
+            width: 70px;
+            height: 7px;
+            background: $white;
+        }
+    }
+    @include breakpoint($less-lg) {
+        .flex-direction-nav {
+            display: none;
+        }
+    }
+}
