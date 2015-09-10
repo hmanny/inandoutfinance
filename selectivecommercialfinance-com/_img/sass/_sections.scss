@@ -1,0 +1,313 @@
+header {
+    width: 100%;
+    padding: 15px 0 1px;
+    @include breakpoint($md) {
+        padding-bottom: 10px;
+    }
+    display: block;
+    background: $white;
+    z-index: 100;
+    position: fixed;
+    text-align: left;
+    box-shadow: 1px 1px 1px rgba(0, 0, 7, 0.3);
+    @include breakpoint($lg) {
+        position: static;
+    }
+    .grid3 {
+        margin: 0;
+    }
+    .grid7 {
+        display: none;
+        @include breakpoint($lg) {
+            display: inline-block;
+        }
+    }
+    .container {
+        position: relative;
+        margin-top: 4px;
+        .grid3 {
+            vertical-align: middle;
+            .logo {
+                display: inline-block;
+                min-width: 200px;
+                width: 100%;
+                position: relative;
+                img {
+                    max-width: 50%;
+                    @include breakpoint($md) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        .grid1 {
+            display: none;
+            @include breakpoint($lg) {
+                display: inline-block;
+            }
+            text-align: right;
+            vertical-align: middle;
+            button {
+                padding: 10px;
+                margin: 0;
+                img {
+                    max-width: 24px;
+                }
+            }
+        }
+    }
+}
+.flex-container {
+    position: relative;
+    @include breakpoint($md) {
+        display: block;
+    }
+    padding-top: 112px;
+    @include breakpoint($lg) {
+        padding-top: 0;
+    }
+    .flexslider {
+        border: none;
+        li {
+            border-top: 2px solid $grey;
+        }
+    }
+    li {
+        p.flex-caption {
+           @include transform(scale(0.3));
+            opacity: 0;
+            @include transition(all 0.7s ease-in-out);
+            @include transition-delay(0.7s);
+            display: block;
+            text-shadow: none;
+            width: 75%;
+            margin: 0 auto;
+            max-width: 1175px;
+            position: relative;
+            padding: 60px 0 100px;
+            @include breakpoint($md) {
+                padding: 100px 0;
+            }
+            @include breakpoint($lg) {
+                padding: 190px 0;
+            }
+            text-align: left;
+            background: none;
+            bottom: inherit;
+            font-size: 31px;
+            @include breakpoint($sm) {
+                font-size: 45px;
+            }
+            @include breakpoint($md) {
+                font-size: 55px;
+            }
+            @include breakpoint($lg) {
+                font-size: 75px;
+            }
+            line-height: 1;
+            font-family: $condensedBold;
+            color: $text-grey;
+            span {
+                display: block;
+            }
+            span:first-child {
+                color: $orange;
+            }
+        }
+        &.flex-active-slide {
+            p.flex-caption {
+                @include transform(scale(1));
+                opacity: 1;
+            }
+        }
+    }
+    .flex-control-nav {
+        display: none;
+    }
+}
+.welcome {
+    padding: 75px 0;
+    background: $light-grey;
+    font-size: 19px;
+    line-height: 1.4;
+    .tickstrip {
+        .tick,
+        .tick-text {
+            display: inline-block;
+        }
+        margin-bottom: 25px;
+    }
+    .grid12 {
+        p {
+            margin-bottom: 35px;
+        }
+    }
+}
+.testimonials {
+    color: $white;
+    background: $orange;
+    font-size: 19px;
+    .flex-container-testimonials {
+        padding: 75px 0;
+        background: url('/selectivecommercialfinance-com/_img/logofade.png');
+        background-position: 75%;
+        background-repeat: no-repeat;
+        .flexslider {
+            background: none;
+            border: none;
+            .grid3 {
+                display: none;
+                @include breakpoint($lg) {
+                    display: inline-block;
+                }
+                margin: 0;
+                img {
+                    width: auto;
+                }
+            }
+            .grid3,
+            .grid9 {
+                vertical-align: middle;
+                margin-bottom: 0;
+            }
+            .flex-direction-nav {
+                display: none;
+                @include breakpoint($xxlg) {
+                    display: block;
+                }
+                a:before {
+                    color: $white;
+                }
+            }
+            li {
+                p.flex-caption {
+                    display: block;
+                    text-shadow: none;
+                    width: 100%;
+                    max-width: 1175px;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .flex-control-nav {
+            @include breakpoint($lg) {
+                bottom: 0;
+                left: 7%;
+            }
+            @include breakpoint($xxlg) {
+                display: none;
+            }
+        }
+    }
+}
+.blogstrip {
+    padding: 50px 0;
+    background: $light-grey;
+    h1 {
+        color: #333;
+        &:after {
+            background: #333;
+        }
+    }
+    .blogSummary {
+        .blogSummaryWrap {
+            box-shadow: $shadow;
+            @extend .grid4;
+            @include breakpoint($lg) {
+                &:first-child {
+                    margin-left: 0;
+                    margin-right: 2%;
+                }
+                &:last-child {
+                    margin-right: 0;
+                    margin-left: 2%;
+                }
+            }
+            @include breakpoint($less-lg) {
+                margin: 20px auto;
+                width: 90%;
+                max-width: 400px;
+            }
+            .blogSummaryImage {
+                height: 180px;
+            }
+            .blogSummaryTitle {
+                margin: 24px;
+                font-family: $bold;
+                font-size: 24px;
+                a {
+                    text-decoration: none;
+                    color: #333;
+                }
+            }
+            .blogSummaryDescription {
+                font-family: $text;
+                font-size: 16px;
+                margin: 0 24px;
+            }
+            .blogSummaryDate {
+                display: none;
+            }
+            .blogSummaryLink {
+                padding: 48px 0;
+                a {
+                    @extend button;
+                    @include breakpoint($lg) {
+                        margin-left: 24px;
+                    }
+                    background: #ababab!important;
+                    color: #444!important;
+                    text-decoration: none;
+                    font-family: $text!important;
+                    @include transition(color background,
+                    2s);
+                    &:hover {
+                        color: $white!important;
+                        background: $orange!important;
+                    }
+                }
+            }
+            background: $grey;
+            color: #333;
+        }
+    }
+}
+footer {
+    padding: 10px 0 0;
+    @include breakpoint($lg) {
+        padding-top: 25px;
+    }
+    font-family: $text;
+    color: $white;
+    background: $dark-grey;
+    text-align: center;
+    font-size: 13px;
+    @include breakpoint($md) {
+        font-size: 16px;
+    }
+    a {
+        color: $white;
+    }
+    .grid3 {
+        vertical-align: middle;
+        margin-bottom: 20px;
+    }
+    .grid1 {
+        display: none;
+        @include breakpoint($lg) {
+            display: inline-block;
+        }
+        vertical-align: middle;
+    }
+    button {
+        padding: 10px;
+        margin: 0;
+    }
+    .copyright {
+        background: #222;
+        padding: 10px 0;
+        @include breakpoint($lg) {
+            text-align: right;
+        }
+    }
+}
